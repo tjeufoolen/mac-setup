@@ -7,7 +7,7 @@
     "toc": "doctoc README.md --github"
   },
   "keywords": [],
-  "author": "CJ R. <cj@null.computer> (https://w3cj.sh)",
+  "author": "Tjeu Foolen <tjeu@foolen.me> (https://tjeufoolen.nl)",
   "license": "MIT",
   "dependencies": {
     "doctoc": "^1.4.0",

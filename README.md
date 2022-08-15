@@ -1,56 +1,27 @@
 ## My Mac Setup
 
-This repo contains info on all the apps / tools / settings I use on my Mac.
+This repo contains info on all the apps / tools / settings I use on my Mac. (Based of [CodingGarden's mac-setup](https://github.com/CodingGarden/mac-setup).)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [What Macbook do I have?](#what-macbook-do-i-have)
 - [Homebrew / Terminal / Shell](#homebrew--terminal--shell)
   - [Homebrew](#homebrew)
   - [Terminal](#terminal)
   - [Shell](#shell)
-    - [Install Bash and set it as the default](#install-bash-and-set-it-as-the-default)
-    - [Customizing Bash with `.bash_profile`](#customizing-bash-with-bash_profile)
-    - [Commands used by my .bash_profile](#commands-used-by-my-bash_profile)
+    - [Install Oh My Zsh](#install-oh-my-zsh)
+    - [Customizing Shell with theme](#customizing-shell-with-theme)
     - [Install the latest version of git](#install-the-latest-version-of-git)
-    - [Other command line tools I use](#other-command-line-tools-i-use)
-- [OS Productivity](#os-productivity)
-  - [Window Management](#window-management)
-  - [App Switching](#app-switching)
-  - [Quick Launching](#quick-launching)
-- [Other Apps I Use Daily](#other-apps-i-use-daily)
+- [Apps I Use Daily](#apps-i-use-daily)
 - [OS Settings](#os-settings)
   - [Finder](#finder)
   - [Dock](#dock)
-- [Menu Bar Customization](#menu-bar-customization)
-  - [System Stats Widgets](#system-stats-widgets)
-  - [Menu Bar Calendar](#menu-bar-calendar)
-- [Note Taking](#note-taking)
-- [Web Browser](#web-browser)
-  - [Firefox](#firefox)
 - [Node.js](#nodejs)
-  - [Global Modules](#global-modules)
 - [VS Code](#vs-code)
 - [Break Timer](#break-timer)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## What Macbook do I have?
-
-I am still using the 2015 Macbook Pro (yes still in 2022). This 7 year old laptop still runs great for all of my needs (development, music production, video editing and image editing).
-
-These are the specs at a glance:
-
-* Intel "Core i7" Quad Core 2.5 GHz
-* 16GB RAM
-* 500GB SSD
-* AMD Radeon R9 M370X 2GB GPU
-
-You can read more about it [here](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-core-i7-2.5-15-dual-graphics-mid-2015-retina-display-specs.html)
-
-The apps and settings I use will work on the latest M1 and M2 MacBooks as well.
 
 ## Homebrew / Terminal / Shell
 
@@ -72,16 +43,6 @@ After Homebrew is done installing, we will use it to install everything else we 
 
 The first app I install is to replace the built in `Terminal`.
 
-I prefer [iTerm2](https://iterm2.com/) because:
-* Nice [window chrome](https://en.wiktionary.org/wiki/chrome#Noun)
-* Lots of customization options
-* Clickable links
-* Native OS notifications
-
->Quick aside - "window chrome" is another term for the basic structural elements used in a graphical user interface, such as window frames and scroll bars, as opposed to the content. After having a few people review this, I realize not everyone knows / uses that term 😅
-
-There are a lot of options for a terminal replacement, but I've been using iTerm2 for years and it works great for my needs.
-
 Checkout their documentation for more info on what iTerm2 can do: [https://iterm2.com/documentation.html](https://iterm2.com/documentation.html)
 
 We install this using a Homebrew "cask". Casks are full applications, similar to what you would install from the App store.
@@ -102,98 +63,37 @@ Once installed, launch it and customize the settings / preferences to your likin
       * Text -> Font -> Anonymous Pro
           * You can download this font [here](https://www.marksimonson.com/fonts/view/anonymous-pro).
           * I use this font in VS Code as well
-      * Text -> Font Size -> 36
-          * I use my Macbook to present / teach, so a big font size is important so everyone can see the commands I'm typing
+      * Text -> Font Size -> 16
       * Keys -> Key Mappings -> Presets -> Natural Text Editing
           * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
 
 ### Shell
 
-Mac now comes with `zsh` as the default [shell](https://en.wikipedia.org/wiki/Comparison_of_command_shells). `bash` is my preferred shell.
+Mac now comes with `zsh` as the default [shell](https://en.wikipedia.org/wiki/Comparison_of_command_shells) and is my preferred shell.
 
-I prefer bash because every remote linux machine I log into uses bash. Also, most shell scripts you come across (`.sh` files) are meant to be run on `sh` (Bourne shell) or `bash` (Bourne again shell). These files _might_ run on `zsh`, but there might be some compatibility issues.
+In combination with `zsh` I use [Oh My Zsh](https://ohmyz.sh/) which gives you a bunch of customizations out of the box.
 
-If you are a beginner, you probably don't need to replace your shell with `bash`. If you're going to stick with `zsh`, checkout [Oh My Zsh](https://ohmyz.sh/) which gives you a bunch of customizations out of the box.
+#### Install Oh My Zsh
 
-#### Install Bash and set it as the default
-
-To see what shell is currently your default, run:
+To install the latest version of `Oh My Zsh` use:
 
 ```sh
-echo $SHELL
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-To install the latest version of bash:
+#### Customizing Shell with theme
+
+I use [powerlevel10k](https://github.com/romkatv/powerlevel10k) as theme inside Oh My Zsh.
+
+To download the latest version of `powerlevel10k` use:
 
 ```sh
-brew install bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-Then, determine where bash got installed:
-
+After that, set powerlevel10k as your current theme in `~/.zshrc`:
 ```sh
-which bash
-```
-
-This will likely print `/usr/local/bin/bash`.
-
-We now need to add this to our `/etc/shells` file so we can set it as our default shell.
-
-Open up the `/etc/shells` file in `nano` (a command line text editor) with super user privileges (you will need to type your password after running this command):
-
-```sh
-sudo nano /etc/shells
-```
-
-Command explained:
-
-* [`sudo`](https://en.wikipedia.org/wiki/Sudo) is a way of running a command with `super user` privileges.
-* [`nano`](https://en.wikipedia.org/wiki/GNU_nano) is an easy to use command line editor. As opposed to [`vi` or `vim`](https://en.wikipedia.org/wiki/Vim_(text_editor)).
-* `/etc/shells` is the file we need to edit / update.
-
-This will launch a command line editor. Add `/usr/local/bin/bash` to the file above the other list of shells.
-
-Press `CTRL+X` to close the file and then `Y` to confirm / save the changes.
-
-Now that `/usr/local/bin/bash` is in our `/etc/shells` file, we can set it as our default shell (you will need to enter your password for this command as well):
-
-```sh
-chsh -s /usr/local/bin/bash
-```
-
-Now that you've changed your shell, if you open up a new iTerm2 tab or close / re-open iTerm2, you should be presented with a `bash` shell!
-
-You can run the following to confirm you shell has changed:
-
-```sh
-echo $SHELL
-```
-
-#### Customizing Bash with `.bash_profile`
-
-I have a custom `.bash_profile` with all of my custom settings including a customized prompt, aliases, PATH variables, colors and more.
-
-If you do not want to go through the process of customizing your `.bash_profile`, you can install [Oh My Bash](https://ohmybash.nntoan.com/) to get a ton of customizations out of the box.
-
-I store my `.bash_profile` on [github here](https://github.com/w3cj/dotfiles/blob/master/.bash_profile) so I can copy it over to any machine I'm setting up.
-
-Copy this file (or create your own) in your home directory:
-
-```sh
-cd ~
-curl -O https://raw.githubusercontent.com/w3cj/dotfiles/master/.bash_profile
-```
-
-#### Commands used by my .bash_profile
-
-* vcprompt - list the current branch if in a folder that is a git repo
-* [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix)) - print a random quote / story / joke / poem.
-* [cowsay](https://en.wikipedia.org/wiki/Cowsay) - use a cowfile to say a random fortune
-
-```sh
-brew install vcprompt
-brew install fortune
-brew install cowsay
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
 #### Install the latest version of git
@@ -214,96 +114,55 @@ git --version
 Configure git with your name / email and preferred editor:
 
 ```sh
-git config --global user.name w3cj
+git config --global user.name example
 
-git config --global user.email cj@null.computer
+git config --global user.email info@example.com
 
 git config --global core.editor nano
 ```
 
-#### Other command line tools I use
+## Apps I Use Daily
 
-* [ffmpeg](https://en.wikipedia.org/wiki/FFmpeg) - edit videos from the command line
-* [imagemagick](https://en.wikipedia.org/wiki/ImageMagick) - edit images from the command line
-
-```sh
-brew install ffmpeg
-brew install imagemagick
-```
-
-## OS Productivity
-
-### Window Management
-
-I know this feature is built in to a lot of other operating systems, but it is not built in to a Mac, so we need an app for it.
-
-I use [rectangle](https://rectangleapp.com/) to move and resize windows using keyboard shortcuts. I used to use [spectacle](https://www.spectacleapp.com/), but rectangle is more regularly maintained and allows me to use all of the same keyboard shortcuts as spectacle.
-
-I highly recommend installing this and memorizing the keyboard shortcuts. Fluid and seamless window management is key to being productive while coding.
-
-```sh
-brew install rectangle
-```
-
-### App Switching
-
-The built in App switcher only shows application icons, and only shows 1 icon per app regardless of how many windows you have open in that app.
-
-I use an app switcher called [AltTab](https://alt-tab-macos.netlify.app/). It shows full window previews, and has an option to show a preview for every open window in all applications (even minimized ones).
-
-I replace the built-in `CMD+TAB` shortcut with AltTab.
-
-```sh
-brew install alt-tab
-```
-
-### Quick Launching
-
-The built in spotlight search is a bit slow for me and usually has web search results as the default instead of apps or folders on my machine.
-
-I use [Alfred](https://www.alfredapp.com/) to launch apps / folders. There are features locked behind the paid powerpack, but I purchased a lifetime license a few years ago, and Alfred keeps working great for me. There are a lot of other cool things you can do with Alfred (workflows, scripting, clipboard manager etc.), but I mainly use it for launching apps and folders.
-
-```sh
-brew install alfred
-```
-
-## Other Apps I Use Daily
-
-* [firefox-developer-edition](https://www.mozilla.org/en-US/firefox/developer/) - Preferred web browser
-* [app-cleaner](https://freemacsoft.net/appcleaner/) - When removing an app, will search your file system for related files / settings that should be removed as well
-* android-file-transfer - Transfer files to / from my android phone
-* android-platform-tools - Installs `adb` without the need for the full android studio.
+* [google-chrome](https://www.google.com/chrome/) - Preferred web browser
+* [whatsapp](https://www.whatsapp.com/) - Chatting
+* [github](https://desktop.github.com/) - Git client
+* [notion](https://www.notion.so/) - Note taking
+* [todoist](https://todoist.com/home) - Keep track of tasks
 * [keepingyouawake](https://keepingyouawake.app/) - Prevents my Mac from going to sleep when I'm presenting / live streaming
 * [discord](https://discord.com/) - Messaging / Community
 * [vlc](https://www.videolan.org/) - I use VLC to watch videos instead of the built in QuickTime.
 * [keka](https://www.keka.io/en/) - Can extract 7z / rar and other types of archives
-* [kap](https://getkap.co/) - Screen recorder / gif maker
 * [time-out](https://www.dejal.com/timeout/) - Break timer
-* [gimp](https://www.gimp.org/) - Image editor
-* [inkscape](https://inkscape.org/) - Vector editor
-* [visual-studio-code](https://code.visualstudio.com/) - Code Editor
-* [sublime-text](https://www.sublimetext.com/) - Note taking (I know there are better apps...)
+* [adobe-creative-cloud](https://www.adobe.com/creativecloud.html) - Graphic design
+* [visual-studio-code](https://code.visualstudio.com/) - Basic code Editor
+* [jetbrains-toolbox](https://www.jetbrains.com/toolbox-app/) - advanced ide for specific languages
 * [insomnia](https://insomnia.rest/products/insomnia) - HTTP / REST / GraphQL tester / requester
+* [stats](https://github.com/exelban/stats) - CPU, RAM & Network statistics inside menubar
+* [alt-tab](https://alt-tab-macos.netlify.app/) - Tab management with window viewer
+* [rectangle](https://rectangleapp.com/) - Window management
+* [alfred](https://www.alfredapp.com/) - Quick app launching & clipboard history
 
 You can install them in one go by placing them all into a text file and then running brew install:
 
 ```
-firefox-developer-edition
-app-cleaner
-android-file-transfer
-android-platform-tools
+google-chrome
+whatsapp
+github
+notion
+todoist
 keepingyouawake
 discord
-slack
 vlc
 keka
-kap
 time-out
-gimp
-inkscape
+adobe-creative-cloud
 visual-studio-code
-sublime-text
+jetbrains-toolbox
 insomnia
+stats
+alt-tab
+rectangle
+alfred
 ```
 
 ```sh
@@ -339,59 +198,6 @@ I don't use the Dock at all. It takes up screen space, and I can use Alfred to l
       * Position on screen -> Right
       * Automatically hide and show the Dock -> Yes
 
-## Menu Bar Customization
-
-### System Stats Widgets
-
-I like to see my network traffic, CPU temp / usage and RAM usage at a glance.
-
-I used to use [iStat Menus](https://bjango.com/mac/istatmenus/), but a few people in my twitch chat pointed me to [stats](https://github.com/exelban/stats), a FOSS menu bar stats app. I tried it out, and I like it so far.
-
-In each widget, a key setting to look for is under "widget settings", choose "merge widgets into one".
-
-```sh
-brew install stats
-```
-
-### Menu Bar Calendar
-
-I like to have a calendar in the menu bar that I can quickly look at. stats does not include one, so I found [itsycal](https://www.mowglii.com/itsycal/). It seems fine for my needs.
-
-```sh
-brew install itsycal
-```
-
-itsycal shows the date, so I hide the date in the system menu bar widget:
-
-* System Preferences
-  * Dock & Menu Bar
-      * Clock
-          * Show Date -> Never
-          * Show Day of Week -> No
-
-## Note Taking
-
-There are likely a million other better options, but I have used [Sublime Text](https://www.sublimetext.com/) as a note taking app for years now. I essentially use it as a staging area before moving my notes into a more permanent place (Google Docs, Google Keep, Trello, actual code project READMES etc.) or I delete the note (close the tab) after it has served its purpose.
-
-I use sublime because it allows me to open new tabs / files without the need to save a given file. I can have several tabs / staging areas open and then completely close sublime. When I open it back up, all of my tabs are still there.
-
-## Web Browser
-
-### Firefox
-
-I use Firefox because it is open source and comes from the [Mozilla Foundation](https://www.mozilla.org/en-US/about/manifesto/), a non profit company that [respects my privacy](https://www.mozilla.org/en-US/firefox/privacy/).
-
-I use the following extensions to protect my privacy while browsing the web:
-
-* Adblocker - [uBlock Origin](https://github.com/gorhill/uBlock)
-* Tracker Blocker - [Privacy Badger](https://privacybadger.org/)
-  * Firefox now includes tracker blocking, but I leave Privacy Badger enabled.
-* [Cookie Autodelete](https://github.com/Cookie-AutoDelete/Cookie-AutoDelete)
-  * Removes cookies from websites that are not in my whitelist whenever a tab is closed. An additional precaution to tracker blocking.
-* [Decentraleyes](https://decentraleyes.org/)
-  * Caches CDN links locally and intercepts requests to serve from the cache. Prevents CDNs from tracking you across websites.
-
-
 ## Node.js
 
 I use nvm to manage the installed versions of Node.js on my machine. This allows me to easily switch between Node.js versions depending on the project I'm working in.
@@ -417,21 +223,6 @@ Now that nvm is installed, you can install a specific version of node.js and use
 nvm install 18
 nvm use 18
 node --version
-```
-
-### Global Modules
-
-There are a few global node modules I use a lot:
-
-* lite-server
-  * Auto refreshing static file server. Great for working on static apps with no build tools.
-* license
-  * Auto generate open source license files
-* gitignore
-  * Auto generate `.gitignore` files base on the current project type
-
-```
-npm install -g lite-server license gitignore
 ```
 
 ## VS Code
@@ -461,6 +252,3 @@ I use an app called [Time Out](https://www.dejal.com/timeout/).
 I have it setup to show:
 * 10 second micro break every 15 minutes
 * 5 minute long break every 60 minutes
-
-There is also a cross platform break timer call [Stretchly](https://hovancik.net/stretchly/). I have not used it but a lot of people have recommended it.
-
