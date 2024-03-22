@@ -27,7 +27,7 @@ nvm install latest
 
 nvm use latest
 
-# install java versions
+# Link java versions
 jenv add /usr/local/opt/openjdk@8
 jenv add /usr/local/opt/openjdk@11
 jenv add /usr/local/opt/openjdk@17
