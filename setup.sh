@@ -18,14 +18,9 @@ git config --global user.name tjeufoolen
 git config --global user.email tjeu@foolen.me
 git config --global core.editor nano
 
-# install node version manager
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/HEAD/install.sh | bash
-
 # install node versions
-nvm install lts
-nvm install latest
-
-nvm use latest
+n latest
+n lts
 
 # install java versions
 jenv add /usr/local/opt/openjdk@8
