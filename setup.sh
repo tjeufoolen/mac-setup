@@ -17,6 +17,10 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git config --global user.name tjeufoolen
 git config --global user.email tjeu@foolen.me
 git config --global core.editor code
+git config --global core.autocrlf input
+git config --global pull.rebase true
+git config --global rebase.autoStash true
+git lfs install
 
 # install node versions
 n latest
