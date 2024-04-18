@@ -26,11 +26,18 @@ git lfs install
 n latest
 n lts
 
-# install java versions
+# Configure jenv
+echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(jenv init -)"' >> ~/.zshrc
+eval "$(jenv init -)"
+jenv enable-plugin export
+
+# Add installed java versions to jenv
 jenv add /usr/local/opt/openjdk@8
 jenv add /usr/local/opt/openjdk@11
 jenv add /usr/local/opt/openjdk@17
 
+# Specify default java version with jenv
 jenv global 17.0
 
 # create dev folder
