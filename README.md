@@ -18,7 +18,7 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
 
 1. Clone this repository
 2. Run [setup.sh](./setup.sh)
-3. Configure the [OS Settings](#os-settings) described below by hand.
+3. Configure the [OS Settings](#os-settings) and [Application Settings](#application-settings) described below by hand.
 4. Enjoy your freshly installed mac! :tada:
 
 ## Homebrew
