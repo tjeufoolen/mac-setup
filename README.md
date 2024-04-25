@@ -2,6 +2,18 @@
 
 This repo contains info on all the apps / tools / settings I use on my Mac.
 
+## Table of Contents
+
+- [Usage](##usage)
+- [Homebrew](#-usage)
+- [OS Settings](#-os-settings)
+  - [Finder](#-finder)
+  - [Dock](#-dock)
+- [Application Settings](#-application-settings)
+  - [Raycast](#-raycast)
+  - [Rectangle](#-rectangle)
+  - [Stretchly](#-strechtly)
+
 ## Usage
 
 1. Clone this repository
@@ -15,7 +27,7 @@ I use Homebrew for most of the installation of my apps and tools. Each of these 
 
 ## OS Settings
 
-These are my preferred settings for `Finder` and the `Dock`.
+These are my preferred settings for all native macos features.
 
 ### Finder
 
@@ -45,3 +57,40 @@ These are my preferred settings for `Finder` and the `Dock`.
 * System Preferences
   * Dock & Menu Bar
     * Show recent applications in Dock -> No
+
+## Application Settings
+
+These are my preferred settings for all third party macos applications.
+
+### Raycast
+
+* Extensions
+  * Clipboard History
+    * Hotkey -> CMD + Shift + C  
+
+### Rectangle
+
+* Repeated commands -> cycle 1/2, 2/3 and 1/3 on half actions
+ 
+### Stretchly
+
+* Settings
+  * Start Stretchly automatically when logging in -> Yes
+  * Show breaks in -> Full screen
+  * Show exercise tips during breaks -> Yes
+  * Show breaks on all monitors -> Yes
+  * Monitor system idle time -> Yes
+  * Show breaks even in Do Not Disturb mode -> Yes
+* Schedule
+  * Enable Mini Breaks -> Yes
+    * Break for -> 20 seconds
+    * Every -> 15 minutes
+    * Show notification before Mini Break starts -> No
+    * Enable Postponement for Mini Break -> Yes
+  * Enable Long Breaks
+    * Break for -> 5 minutes
+    * Every -> 90 minutes
+    * Show notification before Long Break starts -> No
+    * Enable Postponement for Long Break -> Yes
+* Theme
+  * Menubar icon -> Monochrome    
