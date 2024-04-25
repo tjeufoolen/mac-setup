@@ -16,3 +16,4 @@ spotify
 whatsapp
 discord
 n
+stretchly
