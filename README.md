@@ -4,15 +4,15 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
 
 ## Table of Contents
 
-- [Usage](##usage)
-- [Homebrew](#-usage)
-- [OS Settings](#-os-settings)
-  - [Finder](#-finder)
-  - [Dock](#-dock)
-- [Application Settings](#-application-settings)
-  - [Raycast](#-raycast)
-  - [Rectangle](#-rectangle)
-  - [Stretchly](#-strechtly)
+- [Usage](#usage)
+- [Homebrew](#homebrew)
+- [OS Settings](#os-settings)
+  - [Finder](#finder)
+  - [Dock](#dock)
+- [Application Settings](#application-settings)
+  - [Raycast](#raycast)
+  - [Rectangle](#rectangle)
+  - [Stretchly](#strechtly)
 
 ## Usage
 
