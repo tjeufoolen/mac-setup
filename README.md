@@ -22,12 +22,12 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
 
 1. Clone this repository
 2. Run [setup.sh](./setup.sh)
-3. Configure the [OS Settings](#os-settings) and [Application Settings](#application-settings) described below by hand.
+3. Configure the [OS](#os-settings), [Git](#git-settings) and [Application](#application-settings) Settings described below by hand.
 4. Enjoy your freshly installed mac! :tada:
 
 ## Homebrew
 
-I use Homebrew for most of the installation of my apps and tools. Each of these are specified inside [brew-casks.txt](./brew-casks.txt) or [brew-formulae.txt](./brew-formulae.txt) depending if is an actual program or just a cli/binary.
+I use Homebrew for most of the installation of my apps and tools. Each of these are specified inside the [brew bundle file](./Brewfile). The setup script uses this file to setup taps and handle the downloading of all formulas.
 
 ## OS Settings
 
@@ -87,3 +87,4 @@ These are my preferred settings for all third party macos applications.
 - Settings -> Appearance
   - Prompt -> Select `Shell prompt (PS1)`
   - Text -> Terminal font -> Select `MesloLGS Nerd Font Mono`
+  - Themes -> Current theme -> Select `Fox`
