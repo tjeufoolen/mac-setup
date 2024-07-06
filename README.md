@@ -18,6 +18,7 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
     - [Rectangle](#rectangle)
     - [Warp](#warp)
     - [Alt tab](#alt-tab)
+    - [Notion](#notion)
 
 ## Usage
 
@@ -94,3 +95,8 @@ These are my preferred settings for all third party macos applications.
 
 - Preferences -> Controls -> Shortcut 1
   - Replace _ctrl_ with _cmd_ for the hold key
+
+### Notion
+
+- Right click menu bar icon
+  - Deselect `Show notion menu bar icon`
