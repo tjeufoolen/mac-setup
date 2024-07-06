@@ -1,0 +1,14 @@
+warp
+visual-studio-code
+jetbrains-toolbox
+podman-desktop
+google-chrome
+raycast
+rectangle
+google-drive
+1password
+notion
+spotify
+whatsapp
+discord
+n
