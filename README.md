@@ -13,7 +13,6 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
     - [Dock](#dock)
   - [Git Settings](#git-settings)
     - [SSH Key Setup](#ssh-key-setup)
-    - [Commit Signing](#commit-signing)
   - [Application Settings](#application-settings)
     - [Raycast](#raycast)
     - [Rectangle](#rectangle)
@@ -66,11 +65,7 @@ These are my preferred settings for all native macos features.
 
 ### SSH Key Setup
 
-To setup git commit signing follow the designated guide from Github on how to [add a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-accountn).
-
-### Commit Signing
-
-After creating and linking your ssh key to git you can tell git that we also would like to use it for signing our commits. This can be done by executing `git config --global gpg.format ssh` as the script should've set when running just as the `user.signingkey`.
+To setup git commit signing follow the designated guide from Github on how to [add a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-accountn). The script should've set the needed properties to use this new generated ssh key for commit signing (Assuming that the default name and location is used; `~/.ssh/id_ed25519`).
 
 ## Application Settings
 
