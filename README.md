@@ -16,6 +16,7 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
   - [Application Settings](#application-settings)
     - [Raycast](#raycast)
     - [Rectangle](#rectangle)
+    - [Warp](#warp)
 
 ## Usage
 
@@ -80,3 +81,9 @@ These are my preferred settings for all third party macos applications.
 ### Rectangle
 
 - Repeated commands -> cycle 1/2, 2/3 and 1/3 on half actions
+
+### Warp
+
+- Settings -> Appearance
+  - Prompt -> Select `Shell prompt (PS1)`
+  - Text -> Terminal font -> Select `MesloLGS Nerd Font Mono`
