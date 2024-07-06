@@ -17,6 +17,7 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
     - [Raycast](#raycast)
     - [Rectangle](#rectangle)
     - [Warp](#warp)
+    - [Alt tab](#alt-tab)
 
 ## Usage
 
@@ -88,3 +89,8 @@ These are my preferred settings for all third party macos applications.
   - Prompt -> Select `Shell prompt (PS1)`
   - Text -> Terminal font -> Select `MesloLGS Nerd Font Mono`
   - Themes -> Current theme -> Select `Fox`
+
+### Alt tab
+
+- Preferences -> Controls -> Shortcut 1
+  - Replace _ctrl_ with _cmd_ for the hold key
