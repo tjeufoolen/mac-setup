@@ -12,10 +12,8 @@ xcode-select --install
 # xargs brew install < brew-casks.txt
 # ENDTODO: rework for dumpfile
 
-# TODO: rework for ohmyposh
-# setup Oh My ZSH
-# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# ENDTODO: rework for ohmyposh
+# install meslont 'nerd'font
+oh-my-posh font install meslo
 
 # configure git
 git config --global user.name tjeufoolen
