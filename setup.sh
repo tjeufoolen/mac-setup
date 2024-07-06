@@ -1,21 +1,29 @@
-# install xcode build tools
+# --------------------------------------------------
+# Shell
+# --------------------------------------------------
+
+# Install xcode build tools
 xcode-select --install
 
-# install homebrew
+# Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# TODO: rework for dumpfile
-# install homebrew formulae
-# xargs brew install < brew-formulae.txt
+# Install homebrew formulas
+brew bundle --file=Brewfile
 
-# install homebrew casks
-# xargs brew install < brew-casks.txt
-# ENDTODO: rework for dumpfile
-
-# install meslont 'nerd'font
+# Install meslo 'nerd'font
 oh-my-posh font install meslo
 
-# configure git
+# Configure oh-my-posh
+cp -a .config/oh-my-posh/ ~/
+
+# Configure zshell
+cp .zshrc ~/
+source ~/.zshrc
+
+# --------------------------------------------------
+# Git configuration
+# --------------------------------------------------
 git config --global user.name tjeufoolen
 git config --global user.email 12643433+tjeufoolen@users.noreply.github.com
 git config --global core.editor code
@@ -27,25 +35,35 @@ git config --global gpg.format ssh
 git config --global user.signingKey ~/.ssh/id_ed25519
 git lfs install
 
-# install node versions
+# --------------------------------------------------
+# Version managers
+# --------------------------------------------------
+
+# NodeJS
 n latest
 n lts
 
-# Configure jenv
-echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(jenv init -)"' >> ~/.zshrc
+# Java
 eval "$(jenv init -)"
 jenv enable-plugin export
 
-# TODO: rework for apple silicon
 # Add installed java versions to jenv
-# jenv add /usr/local/opt/openjdk@11 #TODO: search alternative so its also available for apple silicon
-# jenv add /usr/local/opt/openjdk@11
-# jenv add /usr/local/opt/openjdk@17
+jenv add /opt/homebrew/opt/openjdk@17
+jenv add /opt/homebrew/opt/openjdk@21
 
 # Specify default java version with jenv
-# jenv global 17.0
-# ENDTODO: rework for apple silicon
+jenv global 21.0
 
-# create dev folder
-mkdir ~/Workspace
+# --------------------------------------------------
+# Development files
+# --------------------------------------------------
+
+# Create dev folder
+mkdir -p ~/Workspace
+
+# --------------------------------------------------
+# Application files
+# --------------------------------------------------
+
+# Warp
+cp -a .warp/ ~/
