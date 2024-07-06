@@ -19,6 +19,8 @@ This repo contains info on all the apps / tools / settings I use on my Mac.
     - [Warp](#warp)
     - [Alt tab](#alt-tab)
     - [Notion](#notion)
+    - [Todoist](#todoist)
+    - [AltTab](#alttab)
 
 ## Usage
 
@@ -76,13 +78,17 @@ These are my preferred settings for all third party macos applications.
 
 ### Raycast
 
-- Extensions
-  - Clipboard History
-    - Hotkey -> CMD + Shift + C
+- Right click menu bar icon -> Settings...
+  - Extensions
+    - Clipboard History -> Hotkey -> CMD + Shift + C
+  - General
+    - Menu bar icon -> Check `Show Raycast in menu bar`
 
 ### Rectangle
 
 - Repeated commands -> cycle 1/2, 2/3 and 1/3 on half actions
+- Right click menu bar icon -> Settings...
+  - Check `Hide menu bar icon`
 
 ### Warp
 
@@ -98,5 +104,13 @@ These are my preferred settings for all third party macos applications.
 
 ### Notion
 
-- Right click menu bar icon
-  - Deselect `Show notion menu bar icon`
+- Right click menu bar icon -> Deselect `Show notion menu bar icon`
+
+### Todoist
+
+- Right click menu bar icon -> Select `Hide Menu Bar Item`
+
+### AltTab
+
+- Right click menu bar icon -> Preferences... -> General
+  - Menubar icon -> Select empty icon option
