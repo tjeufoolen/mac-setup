@@ -59,20 +59,22 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     background = 'transparent'
     template = '❱ '
 
-[[blocks]]
-  type = 'rprompt'
-  overflow = 'hidden'
+## DISABLED: Currently disabled due to bug in warp: https://github.com/warpdotdev/Warp/issues/2304
+# [[blocks]]
+#   type = 'rprompt'
+#   overflow = 'hidden'
 
-  [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
-    foreground = 'p:orange'
-    background = 'transparent'
-    template = '{{ .FormattedMs }}'
+#   [[blocks.segments]]
+#     type = 'executiontime'
+#     style = 'plain'
+#     foreground = 'p:orange'
+#     background = 'transparent'
+#     template = '{{ .FormattedMs }}'
 
-    [blocks.segments.properties]
-      threshold = 1000
-      style = 'round'
+#     [blocks.segments.properties]
+#       threshold = 1000
+#       style = 'round'
+## ENDDISABLED
 
 [palette]
   orange = '#FF5F15'

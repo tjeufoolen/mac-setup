@@ -15,7 +15,7 @@ brew bundle --file=Brewfile
 oh-my-posh font install meslo
 
 # Configure oh-my-posh
-cp -a .config/oh-my-posh/ ~/
+cp -a .config/ohmyposh/ ~/.config/
 
 # Configure zshell
 cp .zshrc ~/
