@@ -15,7 +15,7 @@ brew bundle --file=Brewfile
 oh-my-posh font install meslo
 
 # Configure oh-my-posh
-mdkir -p ~/.config/ohmyposh
+mkdir -p ~/.config/ohmyposh
 cp -a .config/ohmyposh ~/.config/ohmyposh
 
 # Configure zshell
@@ -67,5 +67,5 @@ mkdir -p ~/Workspace
 # --------------------------------------------------
 
 # Warp
-mdkir -p ~/.warp
+mkdir -p ~/.warp
 cp -a .warp ~/.warp
