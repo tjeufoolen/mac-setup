@@ -1,3 +1,6 @@
+autoload -Uz compinit
+compinit
+
 # Make sure gnu (coreutils) cli are before bsd to enforce correct ls
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
