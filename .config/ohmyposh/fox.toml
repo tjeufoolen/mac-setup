@@ -40,41 +40,37 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
             fetch_status = true
             fetch_upstream_icon = true
 
-# [[blocks]]
-#   type = 'prompt'
-#   alignment = 'left'
-#   newline = true
+[[blocks]]
+    type = 'prompt'
+    alignment = 'left'
+    newline = true
 
-## DISABLED: Currently disabled due to bug in warp: https://github.com/warpdotdev/Warp/issues/2304
-# [[blocks.segments]]
-# type = 'text'
-# style = 'plain'
-# foreground = 'p:orange'
-# background = 'transparent'
-# template = '❱'
-## ENDDISABLED
+[[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground = 'p:orange'
+    background = 'transparent'
+    template = '❱'
 
-# [transient_prompt]
-#   foreground = 'p:orange'
-#   background = 'transparent'
-#   template = '❱ '
+[transient_prompt]
+    foreground = 'p:orange'
+    background = 'transparent'
+    template = '❱ '
 
-## DISABLED: Currently disabled due to bug in warp: https://github.com/warpdotdev/Warp/issues/2304
-# [[blocks]]
-#   type = 'rprompt'
-#   overflow = 'hidden'
+[[blocks]]
+    type = 'rprompt'
+    overflow = 'hidden'
 
-#   [[blocks.segments]]
-#     type = 'executiontime'
-#     style = 'plain'
-#     foreground = 'p:orange'
-#     background = 'transparent'
-#     template = '{{ .FormattedMs }}'
+    [[blocks.segments]]
+        type = 'executiontime'
+        style = 'plain'
+        foreground = 'p:orange'
+        background = 'transparent'
+        template = '{{ .FormattedMs }}'
 
-#     [blocks.segments.properties]
-#       threshold = 1000
-#       style = 'round'
-## ENDDISABLED
+    [blocks.segments.properties]
+        threshold = 1000
+        style = 'round'
 
 [palette]
     orange = '#FF5F15'
