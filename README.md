@@ -83,12 +83,12 @@ ansible-playbook -i inventory.ini playbook.yml --check --diff
 
 ## Features
 
-✅ Installs apps using Homebrew
-✅ Configures system preferences
-✅ Sets up Git and SSH
-✅ Copies dotfiles like `.zshrc` and `.warp` configs
-✅ Creates folders and ensures idempotency
-✅ Fully scriptable and reproducible for teams
+- ✅ Installs apps using Homebrew
+- ✅ Configures system preferences
+- ✅ Sets up Git and SSH
+- ✅ Copies dotfiles like `.zshrc` and `.warp` configs
+- ✅ Creates folders and ensures idempotency
+- ✅ Fully scriptable and reproducible for teams
 
 ---
 
