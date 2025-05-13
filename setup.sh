@@ -11,13 +11,6 @@ xcode-select --install
 # Install homebrew formulas
 brew bundle --file=Brewfile
 
-# Install meslo 'nerd'font
-oh-my-posh font install meslo
-
-# Configure oh-my-posh
-mkdir -p ~/.config/ohmyposh
-cp -a .config/ohmyposh ~/.config/ohmyposh
-
 # Configure zshell
 cp .zshrc ~
 source ~/.zshrc

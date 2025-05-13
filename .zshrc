@@ -9,7 +9,6 @@ export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Setup custom prompt
-#eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/fox.toml)"
 function git_branch_name()
 {
   branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
@@ -20,8 +19,6 @@ function git_branch_name()
     echo '%F{#C9C9C9}('$branch') '
   fi
 }
-
-# Enable substitution in the prompt.
 setopt prompt_subst
 export PS1='🦊 %F{#D35002}%~ $(git_branch_name)%F{#D35002}$ %F{default}'
 
