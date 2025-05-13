@@ -4,19 +4,13 @@
 
   vars:
     ansible_shell_executable: /bin/zsh
+    git_user_name: "tjeufoolen"
+    git_user_email: "12643433+tjeufoolen@users.noreply.github.com"
 
   vars_prompt:
     - name: "ansible_become_pass"
       prompt: "Enter your sudo password"
       private: yes
-
-    - name: "git_user_name"
-      prompt: "Enter your Git user name"
-      private: no
-
-    - name: "git_user_email"
-      prompt: "Enter your Git email"
-      private: no
 
   roles:
     - sudo
