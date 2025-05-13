@@ -21,7 +21,7 @@
     marker: "# {mark} GNU (COREUTILS) CLI OVERRIDE FOR LS"
     insertbefore: BOF
 
-- name: Ensure zsh shell startup improvements are present in ~/.zshrc
+- name: Ensure zsh shell startup improvements are present in ~/.zshrc and at the top
   ansible.builtin.blockinfile:
     path: ~/.zshrc
     block: |
