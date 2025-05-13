@@ -1,3 +1,10 @@
+- name: Ensure Homebrew is in the PATH
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: export PATH="/opt/homebrew/bin:$PATH"
+    state: present
+    insertbefore: EOF
+
 - name: Install brew packages
   homebrew:
     name: "{{ item }}"
