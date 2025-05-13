@@ -1,43 +1,46 @@
 # My Mac Setup (Automated with Ansible)
 
-This repo contains a fully automated setup using **Ansible** to configure my personal Mac with apps, settings, dotfiles, and tools.
+This repo contains a partly automated setup using **Ansible** to configure my personal Mac with apps, settings, dotfiles, and tools.
 
 ## Table of Contents
 
 - [My Mac Setup (Automated with Ansible)](#my-mac-setup-automated-with-ansible)
   - [Table of Contents](#table-of-contents)
-  - [Quick Start](#quick-start)
-    - [📦 0. Prerequisites](#-0-prerequisites)
-      - [🛠️ Install Homebrew (if not installed)](#️-install-homebrew-if-not-installed)
-      - [🛠️ Install Ansible via Homebrew](#️-install-ansible-via-homebrew)
-    - [🚀 1. Clone this repository](#-1-clone-this-repository)
-    - [⚙️ 2. Run the Ansible playbook](#️-2-run-the-ansible-playbook)
-  - [Features](#features)
-  - [Playbook Overview](#playbook-overview)
-  - [OS Settings](#os-settings)
-    - [Finder](#finder)
-    - [Dock](#dock)
-  - [Application Settings](#application-settings)
-    - [Raycast](#raycast)
-    - [Rectangle](#rectangle)
-    - [Warp](#warp)
-    - [Alt Tab](#alt-tab)
-    - [Todoist](#todoist)
-    - [AltTab](#alttab)
-  - [Contributing](#contributing)
+  - [Automated Setup](#automated-setup)
+    - [Quick Start](#quick-start)
+      - [📦 0. Prerequisites](#-0-prerequisites)
+        - [🛠️ Install Homebrew (if not installed)](#️-install-homebrew-if-not-installed)
+        - [🛠️ Install Ansible via Homebrew](#️-install-ansible-via-homebrew)
+      - [🚀 1. Clone this repository](#-1-clone-this-repository)
+      - [⚙️ 2. Run the Ansible playbook](#️-2-run-the-ansible-playbook)
+    - [Ansible Playbook Overview](#ansible-playbook-overview)
+  - [Manual Setup](#manual-setup)
+    - [OS Settings](#os-settings)
+      - [Finder](#finder)
+      - [Dock](#dock)
+    - [Application Settings](#application-settings)
+      - [Raycast](#raycast)
+      - [Rectangle](#rectangle)
+      - [Warp](#warp)
+      - [Alt Tab](#alt-tab)
+      - [Todoist](#todoist)
+      - [AltTab](#alttab)
+    - [Contributing](#contributing)
 
 ---
 
-## Quick Start
+## Automated Setup
 
-### 📦 0. Prerequisites
+### Quick Start
+
+#### 📦 0. Prerequisites
 
 This setup assumes the following are installed:
 
 - **[Homebrew](https://brew.sh)** – package manager for macOS
 - **Ansible** – automation tool
 
-#### 🛠️ Install Homebrew (if not installed)
+##### 🛠️ Install Homebrew (if not installed)
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -50,7 +53,7 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-#### 🛠️ Install Ansible via Homebrew
+##### 🛠️ Install Ansible via Homebrew
 
 ```bash
 brew install ansible
@@ -58,7 +61,7 @@ brew install ansible
 
 ---
 
-### 🚀 1. Clone this repository
+#### 🚀 1. Clone this repository
 
 ```bash
 git clone https://github.com/tjeufoolen/mac-setup.git
@@ -67,7 +70,7 @@ cd mac-setup/ansible
 
 ---
 
-### ⚙️ 2. Run the Ansible playbook
+#### ⚙️ 2. Run the Ansible playbook
 
 ```bash
 ansible-playbook -i inventory.ini playbook.yml
@@ -81,18 +84,7 @@ ansible-playbook -i inventory.ini playbook.yml --check --diff
 
 ---
 
-## Features
-
-- ✅ Installs apps using Homebrew
-- ✅ Configures system preferences
-- ✅ Sets up Git and SSH
-- ✅ Copies dotfiles like `.zshrc` and `.warp` configs
-- ✅ Creates folders and ensures idempotency
-- ✅ Fully scriptable and reproducible for teams
-
----
-
-## Playbook Overview
+### Ansible Playbook Overview
 
 The main playbook is located in `ansible/playbook.yml` and includes tasks for:
 
@@ -110,11 +102,13 @@ Make sure to review and edit:
 
 ---
 
-## OS Settings
+## Manual Setup
+
+### OS Settings
 
 These are **not automated** yet and may still require manual tweaking.
 
-### Finder
+#### Finder
 
 - Preferences
 
@@ -128,7 +122,7 @@ These are **not automated** yet and may still require manual tweaking.
   - As List, Sort by Kind
   - Show Status Bar, Path Bar, Tab Bar
 
-### Dock
+#### Dock
 
 - Preferences → Dock & Menu Bar
 
@@ -136,45 +130,41 @@ These are **not automated** yet and may still require manual tweaking.
 
 ---
 
-## Application Settings
+### Application Settings
 
 Some GUI apps require manual config. Here’s how I set mine:
 
-### Raycast
+#### Raycast
 
 - Clipboard History Hotkey → `Cmd + Shift + C`
 - Enable "Show Raycast in menu bar"
 
-### Rectangle
+#### Rectangle
 
 - Enable cycling through sizes (1/2, 2/3, 1/3)
 - Hide menu bar icon
 
-### Warp
+#### Warp
 
 - Appearance → Prompt: `Shell prompt (PS1)`
 - Theme: `Fox`
 
-### Alt Tab
+#### Alt Tab
 
 - Controls → Shortcut 1 → Hold `Cmd` instead of `Ctrl`
 
-### Todoist
+#### Todoist
 
 - Right-click menu bar icon → Hide Menu Bar Item
 
-### AltTab
+#### AltTab
 
 - Preferences → General → Menubar icon → Select empty icon
 
 ---
 
-## Contributing
+### Contributing
 
 Feel free to fork this repo and customize it to fit your own setup or team needs!
 
 ---
-
-```
-
-```
