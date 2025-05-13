@@ -25,7 +25,7 @@ This repo contains a partly automated setup using **Ansible** to configure my pe
       - [Alt Tab](#alt-tab)
       - [Todoist](#todoist)
       - [AltTab](#alttab)
-    - [Contributing](#contributing)
+  - [Contributing](#contributing)
 
 ---
 
@@ -163,7 +163,7 @@ Some GUI apps require manual config. Here’s how I set mine:
 
 ---
 
-### Contributing
+## Contributing
 
 Feel free to fork this repo and customize it to fit your own setup or team needs!
 
