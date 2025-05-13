@@ -1,0 +1,23 @@
+- name: Install brew packages
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - 1password
+    - alt-tab
+    - brave-browser
+    - coreutils
+    - discord
+    - gnupg
+    - google-chrome
+    - google-drive
+    - jetbrains-toolbox
+    - maven
+    - podman-desktop
+    - raycast
+    - rectangle
+    - spotify
+    - todoist
+    - visual-studio-code
+    - warp
+    - whatsapp
