@@ -21,17 +21,6 @@
     marker: "# {mark} GNU (COREUTILS) CLI OVERRIDE FOR LS"
     insertbefore: BOF
 
-- name: Ensure zsh shell startup improvements are present in ~/.zshrc and at the top
-  ansible.builtin.blockinfile:
-    path: ~/.zshrc
-    block: |
-      {% raw %}autoload -Uz compinit
-      compinit
-      {%endraw%}
-    state: present
-    marker: "# {mark} SHELL STARTUP IMPROVEMENTS"
-    insertbefore: BOF
-
 - name: Ensure gnu ls coloring override is present in ~/.zshrc
   ansible.builtin.blockinfile:
     path: ~/.zshrc

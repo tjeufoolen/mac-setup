@@ -73,13 +73,13 @@ cd mac-setup/ansible
 #### ⚙️ 2. Run the Ansible playbook
 
 ```bash
-ansible-playbook -i inventory.ini playbook.yml
+sudo ansible-playbook -i inventory.ini playbook.yml
 ```
 
 You can do a dry run (check mode) to test compliance:
 
 ```bash
-ansible-playbook -i inventory.ini playbook.yml --check --diff
+sudo ansible-playbook -i inventory.ini playbook.yml --check --diff
 ```
 
 ---
