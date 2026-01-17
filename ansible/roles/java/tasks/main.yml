@@ -46,16 +46,16 @@
 
 - name: Install openjdk 25
   homebrew:
-    name: temurin@25
+    name: openjdk@25
     state: present
-  register: temurin_25_install_result
+  register: openjdk_25_install_result
 
-- name: Link temurin 25
+- name: Link openjdk 25
   shell: |
-    jenv add /opt/homebrew/opt/temurin@25
-  when: temurin_25_install_result.changed == true
+    jenv add /opt/homebrew/opt/openjdk@25
+  when: openjdk_25_install_result.changed == true
 
 - name: Set global java version
   shell: |
     jenv global 25
-  when: temurin_25_install_result.changed == true
+  when: openjdk_25_install_result.changed == true
