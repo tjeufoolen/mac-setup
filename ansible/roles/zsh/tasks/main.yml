@@ -21,6 +21,16 @@
     marker: "# {mark} GNU (COREUTILS) CLI OVERRIDE FOR LS"
     insertbefore: BOF
 
+- name: Ensure go binary is within path
+  ansible.builtin.blockinfile:
+    path: ~/.zshrc
+    block: |
+      {% raw %}export PATH="~/go/bin:$PATH"
+      {%endraw%}
+    state: present
+    marker: "# {mark} GO BINARY"
+    insertbefore: BOF
+
 - name: Ensure gnu ls coloring override is present in ~/.zshrc
   ansible.builtin.blockinfile:
     path: ~/.zshrc

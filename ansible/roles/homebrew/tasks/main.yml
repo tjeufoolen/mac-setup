@@ -16,6 +16,7 @@
     - coreutils
     - discord
     - gnupg
+    - go
     - google-chrome
     - google-drive
     - jetbrains-toolbox

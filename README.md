@@ -35,10 +35,12 @@ This repo contains a partly automated setup using **Ansible** to configure my pe
 
 #### 📦 0. Prerequisites
 
-This setup assumes the following are installed:
+This setup assumes the following is installed:
 
 - **[Homebrew](https://brew.sh)** – package manager for macOS
 - **Ansible** – automation tool
+
+Furthermore this setup requires passwordless sudo permissions for Homebrew installs. Make sure you're system is setup for this. An easy way to check is to see if `cat /etc/sudoers.d/homebrew` returns anything comparable to `%admin ALL=(ALL) NOPASSWD: ALL` (or more specific for non personal mac setups).
 
 ##### 🛠️ Install Homebrew (if not installed)
 
@@ -73,14 +75,10 @@ cd mac-setup/ansible
 #### ⚙️ 2. Run the Ansible playbook
 
 ```bash
-sudo ansible-playbook -i inventory.ini playbook.yml
+ansible-playbook -i inventory.ini playbook.yml --ask-become-pass
 ```
 
-You can do a dry run (check mode) to test compliance:
-
-```bash
-sudo ansible-playbook -i inventory.ini playbook.yml --check --diff
-```
+You can do a dry run (check mode) to test compliance by appending `--check --diff` to the command above.
 
 ---
 

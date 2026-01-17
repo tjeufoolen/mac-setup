@@ -41,10 +41,21 @@
 
 - name: Link openjdk 21
   shell: |
-    jenv add /opt/homebrew/opt/openjdk@17
+    jenv add /opt/homebrew/opt/openjdk@21
   when: openjdk_21_install_result.changed == true
+
+- name: Install openjdk 25
+  homebrew:
+    name: temurin@25
+    state: present
+  register: temurin_25_install_result
+
+- name: Link temurin 25
+  shell: |
+    jenv add /opt/homebrew/opt/temurin@25
+  when: temurin_25_install_result.changed == true
 
 - name: Set global java version
   shell: |
-    jenv global 21
-  when: openjdk_21_install_result.changed == true
+    jenv global 25
+  when: temurin_25_install_result.changed == true

@@ -1,6 +1,5 @@
 - name: Setup Mac for development
   hosts: local
-  become: false
 
   vars:
     ansible_shell_executable: /bin/zsh
