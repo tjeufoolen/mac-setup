@@ -12,20 +12,30 @@
   loop:
     - 1password
     - alt-tab
-    - brave-browser
+    - bambu-studio
+    - bruno
     - coreutils
     - discord
+    - epilogue-playback
+    - figma
+    - firefox
+    - ghostty
     - gnupg
     - go
     - google-chrome
-    - google-drive
+    - handbrake
     - jetbrains-toolbox
     - maven
+    - nordvpn
+    - playback
     - podman-desktop
+    - prismlauncher
+    - raspberry-pi-imager
     - raycast
     - rectangle
+    - sony-ps-remote-play
     - spotify
-    - todoist
+    - transmit
     - visual-studio-code
-    - warp
     - whatsapp
+    - wireguard-go
