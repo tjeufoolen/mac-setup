@@ -24,6 +24,7 @@
     - go
     - google-chrome
     - handbrake
+    - homebrew-app
     - jetbrains-toolbox
     - maven
     - nordvpn
